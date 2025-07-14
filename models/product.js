@@ -7,8 +7,11 @@ const appPath = require("../util/path");
 const p = path.join(appPath, "data", "products.json");
 
 module.exports = class Product {
-  constructor(title) {
+  constructor(title, imageUrl, description, price) {
     this.title = title;
+    this.imageUrl = imageUrl;
+    this.description = description;
+    this.price = price;
   }
 
   static async #loadData() {
