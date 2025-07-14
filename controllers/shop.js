@@ -1,22 +1,20 @@
 const Product = require("../models/product");
 
-exports.getProducts = (req, res, next) => {
-  Product.fetchAll((products) => {
-    res.render("shop/product-list", {
-      products,
-      pageTitle: "All Products",
-      path: "/products",
-    });
+exports.getProductsPage = async (req, res, next) => {
+  const products = await Product.fetchAll();
+  res.render("shop/product-list", {
+    products,
+    pageTitle: "All Products",
+    path: "/products",
   });
 };
 
-exports.getIndex = (req, res, next) => {
-  Product.fetchAll((products) => {
-    res.render("shop/index", {
-      products,
-      pageTitle: "Shop",
-      path: "/",
-    });
+exports.getIndex = async (req, res, next) => {
+  const products = await Product.fetchAll();
+  res.render("shop/index", {
+    products,
+    pageTitle: "Shop",
+    path: "/",
   });
 };
 
