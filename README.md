@@ -14,7 +14,6 @@ This project covers:
 - Express.js
 - JavaScript (ES6+)
 - Form Handling
-- Build Tool - Node.js
 ## How to Run
 
 ```bash
